@@ -9,14 +9,15 @@ data.
 
 ## Key result
 
-Using 5 years of real VIX and SPY data, implied volatility exceeded realized
-volatility on **85% of trading days** (avg. +3.6 vol points), a direct,
-real data measurement of the volatility risk premium. A strategy that only
-sold volatility when this premium was elevated *underperformed* an
-unconditional version on a risk-adjusted basis. I tested two hypotheses for
-why, ruled both out with the trade data, and isolated the actual cause: an
-opportunity-cost effect from binary signal filtering, not a signal-quality
-problem. Full investigation can be found in the write up (Section 6.3).
+Trading on 5 years of live VIX and SPY, implied vol was greater
+than realized vol by 85% of the trading days, equaling an average 
+of +3.6 vol points, a simple directly measured quantity of the volatility
+risk premium. A stratgy on only selling vol when the risk premium is 
+practically high lost to a trade strategy selling vol unconditionally on a risk-adjusted bias.
+I developed two theories why this may be, demonstrated both would be wrong based on the trade
+data, and identified the real source, an opportunity cost introduced by binary filtering as 
+opposed to an issue with signal quality.
+A full analysis of this process is laid out in the write up (Section 6.3)
 
 ![Strategy comparison](outputs/vrp_backtest_comparison.png)
 
@@ -60,8 +61,8 @@ python trade_timeline_diagnostic.py
 ## Known limitations
 
 Stated explicitly in the write up (Section 7) rather than glossed over:
-single historical test window with no walk-forward validation, European
-pricing used for American options, no margin modeling, and VIX-based
+one historical test window with no walk forward, European
+pricing used for American options, no margin modeling, using VIX-based
 strategies only extend to index/SPY level trades (no free implied vol
 history exists for individual names). This project is a research and
 backtesting framework, so it does not place live trades.
