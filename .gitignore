@@ -216,3 +216,17 @@ __marimo__/
 
 # Streamlit
 .streamlit/secrets.toml
+
+# Generated output (regenerate via the scripts; not source-controlled)
+*.csv
+greeks_vs_spot.png
+test_smile.png
+test_surface3d.png
+backtest_comparison.png
+vrp_backtest_comparison.png
+vrp_threshold_sweep.png
+trade_timeline_diagnostic.png
+
+# Keep the curated showcase copies
+!outputs/*.png
+**/.DS_Store
