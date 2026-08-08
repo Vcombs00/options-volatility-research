@@ -1,7 +1,7 @@
 # Options Pricing & Volatility Research Engine
 
-A from-scratch quantitative research project: an options pricing engine
-(Black-Scholes, binomial tree, Monte Carlo), an event-driven backtester, and
+A personal quantitative research project: an options pricing engine
+(Black-Scholes, binomial tree, Monte Carlo), an event driven backtester, and
 an empirical study of the S&P 500 volatility risk premium using real market
 data.
 
@@ -10,13 +10,13 @@ data.
 ## Key result
 
 Using 5 years of real VIX and SPY data, implied volatility exceeded realized
-volatility on **85% of trading days** (avg. +3.6 vol points) — a direct,
-real-data measurement of the volatility risk premium. A strategy that only
+volatility on **85% of trading days** (avg. +3.6 vol points), a direct,
+real data measurement of the volatility risk premium. A strategy that only
 sold volatility when this premium was elevated *underperformed* an
 unconditional version on a risk-adjusted basis. I tested two hypotheses for
 why, ruled both out with the trade data, and isolated the actual cause: an
 opportunity-cost effect from binary signal filtering, not a signal-quality
-problem. Full investigation in the write-up (Section 6.3).
+problem. Full investigation can be found in the write up (Section 6.3).
 
 ![Strategy comparison](outputs/vrp_backtest_comparison.png)
 
@@ -59,12 +59,12 @@ python trade_timeline_diagnostic.py
 
 ## Known limitations
 
-Stated explicitly in the write-up (Section 7) rather than glossed over:
+Stated explicitly in the write up (Section 7) rather than glossed over:
 single historical test window with no walk-forward validation, European
 pricing used for American options, no margin modeling, and VIX-based
-strategies only extend to index/SPY-level trades (no free implied-vol
+strategies only extend to index/SPY level trades (no free implied vol
 history exists for individual names). This project is a research and
-backtesting framework — it does not place live trades.
+backtesting framework, so it does not place live trades.
 
 ## License
 
